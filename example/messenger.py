@@ -257,7 +257,7 @@ def received_postback(event):
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("20%  en la Inversión X y 80%  en la Inversión Y ",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("0%  en la Inversión X y 100%  en la Inversión Y ",
@@ -271,19 +271,19 @@ def received_postback(event):
         page.send(sender_id, "Debes elegir la opción con la que te sientas más cómodo, tómate tu tiempo")
         page.send(sender_id, Template.Generic([
             Template.GenericElement("Portafolio A",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498086616/portafolioA_qaovmo.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio B",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498086617/portafolioB_zxpft4.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio C",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498086616/portafolioC_mwrcs7.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio D",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498086616/portafolioD_hslwoi.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "BENEFICIOS")])
             ]))
