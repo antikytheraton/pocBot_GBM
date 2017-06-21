@@ -65,41 +65,41 @@ def received_message(event):
         quick_reply_payload = quick_reply.get('payload')
         print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
-        # page.send(sender_id, "Quick reply tapped")
         if payload == 'CONOCER_PERFIL':
-            text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-            page.send(sender_id, text1)
-            text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-            page.send(sender_id, text2)
-            page.send(sender_id, Template.Generic([
-                Template.GenericElement("Mantener el valor de la inversión.",
-                                        subtitle="Minimizar el riesgo de la misma.",
-                                        # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
-                                        buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_1'}
-                                        ]),
-                Template.GenericElement("Acrecentar el valor de mi inversión.",
-                                        subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
-                                        # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
-                                        buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_2'}
-                                        ]),
-                Template.GenericElement("Crecer sustancialmente mi inversión.",
-                                        subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
-                                        # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
-                                        buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_3'}
-                                        ])
-                ]))
+            page.send(sender_id, 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta')
+            page.send(sender_id, 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?')
+            # page.send(sender_id, Template.Generic([
+            #     Template.GenericElement("Mantener el valor de la inversión.",
+            #                             subtitle="Minimizar el riesgo de la misma.",
+            #                             # item_url="https://www.oculus.com/en-us/rift/",
+            #                             image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
+            #                             buttons=[
+            #                                 {'type': 'postback', 'title': 'seleccionar',
+            #                                  'value': 'META_1'}
+            #                             ]),
+            #     Template.GenericElement("Acrecentar el valor de mi inversión.",
+            #                             subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
+            #                             # item_url="https://www.oculus.com/en-us/touch/",
+            #                             image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
+            #                             buttons=[
+            #                                 {'type': 'postback', 'title': 'seleccionar',
+            #                                  'value': 'META_2'}
+            #                             ]),
+            #     Template.GenericElement("Crecer sustancialmente mi inversión.",
+            #                             subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
+            #                             # item_url="https://www.oculus.com/en-us/touch/",
+            #                             image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
+            #                             buttons=[
+            #                                 {'type': 'postback', 'title': 'seleccionar',
+            #                                  'value': 'META_3'}
+            #                             ])
+            #     ]))
+        else:
+            page.send(sender_id, "Quick reply tapped")
 
     if message_text:
         send_message(sender_id, message_text)
+
     elif message_attachments:
         page.send(sender_id, "Message with attachment received")
 
