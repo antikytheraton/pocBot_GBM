@@ -9,8 +9,8 @@ import example.messenger
 from example.config import CONFIG
 from example.fbpage import page
 
-# app = Flask(__name__)
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
+# app = Flask(__name__, static_url_path='')
 
 
 @app.route('/webhook', methods=['GET'])
@@ -57,7 +57,7 @@ def assets(path):
 
 # if __name__ == '__main__':
 #     app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
-#     app.run(debug=True, threaded=True)
+    app.run(debug=True, threaded=True)
 
-if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=5000, debug=True, threaded=True)
+# if __name__ == '__main__':
+#     app.run(host="127.0.0.1", port=5000, debug=True, threaded=True)
