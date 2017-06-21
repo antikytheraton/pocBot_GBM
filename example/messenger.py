@@ -108,10 +108,10 @@ def received_postback(event):
                         metadata="DEVELOPER_DEFINED_METADATA")
 
     elif payload == 'CONOCER_PERFIL':
-        text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-        page.send(sender_id, text)
-        text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-        page.send(sender_id, text)
+        text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+        page.send(sender_id, text1)
+        text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+        page.send(sender_id, text2)
         
     else:    
         page.send(sender_id, "Postback called")
