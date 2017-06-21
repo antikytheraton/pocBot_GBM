@@ -140,8 +140,8 @@ def received_postback(event):
     elif payload == 'META_1':
         page.send(sender_id, "Hablemos de riesgo")
         page.send(sender_id, "¿Con que nivel de riesgo crees que te sentirías más cómodo?")
-        page.send(sender_id, "Antes de responder recuerda que el grado en el que el valor de la inversión aumenta o disminuye depende del nivel de riesgo que asuma.")
-        page.send(sender_id, "Inversiones con mayor riesgo generalmente ofrecen más crecimiento a largo plazo que aquellas con menos riesgo, pero pueden producir mayor volatilidad.")
+        # page.send(sender_id, "Antes de responder recuerda que el grado en el que el valor de la inversión aumenta o disminuye depende del nivel de riesgo que asuma.")
+        # page.send(sender_id, "Inversiones con mayor riesgo generalmente ofrecen más crecimiento a largo plazo que aquellas con menos riesgo, pero pueden producir mayor volatilidad.")
         page.send(sender_id, Template.Generic([
             Template.GenericElement("Con el menor posible",
                 subtitle="Enfocarse en estabilidad, aunque signifique que las ganancias sean pequeñas.",
