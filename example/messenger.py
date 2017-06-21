@@ -82,14 +82,14 @@ def received_message(event):
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
                                         buttons=[
-                                            Template.ButtonPostBack("seleccionar", "META_2")
+                                            Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr de riesgos.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                         buttons=[
-                                            Template.ButtonPostBack("seleccionar", "META_3")
+                                            Template.ButtonPostBack("seleccionar", "META_1")
                                         ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
@@ -136,6 +136,30 @@ def received_postback(event):
         page.send(sender_id, text,
                         quick_replies=[{'title': 'Mi perfil', 'payload': 'CONOCER_PERFIL'} ],
                         metadata="DEVELOPER_DEFINED_METADATA")
+
+    elif payload == 'META_1':
+        page.send(sender_id, "Hablemos de riesgo")
+        page.send(sender_id, "¿Con que nivel de riesgo crees que te sentirías más cómodo?")
+        page.send(sender_id, "Antes de responder recuerda que el grado en el que el valor de la inversión aumenta o disminuye depende del nivel de riesgo que asuma.")
+        page.send(sender_id, "Inversiones con mayor riesgo generalmente ofrecen más crecimiento a largo plazo que aquellas con menos riesgo, pero pueden producir mayor volatilidad.")
+        page.send(sender_id, Template.Generic([
+            Template.GenericElement("Con el menor posible",
+                subtitle="Enfocarse en estabilidad, aunque signifique que las ganancias sean pequeñas.",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "RIESGO")]),
+            Template.GenericElement("Moderado",
+                subtitle="Estoy dispuesto a asumir riesgo medio buscando obtener mayor potencial de crecimiento a través del tiempo.",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "RIESGO")]),
+            Template.GenericElement("Un porcentage considerable",
+                subtitle="Deseo asumir un riesgo alto en busca de   obtener mayores beneficios.",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "RIESGO")])
+            ]))
+
 
     else:
         page.send(sender_id, "Postback called")
