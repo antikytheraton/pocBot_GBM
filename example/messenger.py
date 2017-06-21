@@ -71,21 +71,21 @@ def received_message(event):
             page.send(sender_id, 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?')
             page.send(sender_id, Template.Generic([
                 Template.GenericElement("Mantener el valor de la inversión.",
-                                        subtitle="Minimizar el riesgo de la misma.",
+                                        subtitle="Minimizar el riesgo de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
-                                        subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
+                                        subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_2")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
-                                        subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
+                                        subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr de riesgos.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                         buttons=[
