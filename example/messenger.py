@@ -73,21 +73,21 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_1.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
                                         subtitle="Acrecentar el valor de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_2.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="Quiero beneficios a corto plazo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_3.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ])
