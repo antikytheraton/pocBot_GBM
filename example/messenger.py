@@ -73,7 +73,7 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de la misma.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
+                                        image_url="https://gbm-but.herokuapp.com/assets/meta_1.jpg",
                                         buttons=[
                                             {'type': 'postback', 'title': 'seleccionar',
                                              'value': 'META_1'}
@@ -95,6 +95,7 @@ def received_message(event):
                                              'value': 'META_3'}
                                         ])
                 ]))
+            print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
         else:
             page.send(sender_id, "Quick reply tapped")
 
