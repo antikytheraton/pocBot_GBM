@@ -73,7 +73,7 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url="http://destinonegocio.com/wp-content/uploads/2015/07/ico-destinonegocio-gestion-de-riesgos-istock-getty-images.jpg",
+                                        image_url="https://investinivy.com/wp-content/uploads/2015/06/Screen-Shot-2015-07-18-at-09.47.46.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ]),
@@ -224,17 +224,17 @@ def received_postback(event):
         page.send(sender_id, Template.Generic([
             Template.GenericElement("Con el menor posible",
                 subtitle="Enfocarse en estabilidad.",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://destinonegocio.com/wp-content/uploads/2015/07/ico-destinonegocio-gestion-de-riesgos-istock-getty-images.jpg",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
             Template.GenericElement("Moderado",
                 subtitle="Estoy dispuesto a asumir un riesgos.",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://www.fotocasa.es/blog/wp-content/uploads/2014/03/Fondos-de-inversi%C3%B3n_6.jpg",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
             Template.GenericElement("Un porcentage considerable",
                 subtitle="Deseo asumir un riesgo alto.",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://compraraccionesdebolsa.com/wp-content/uploads/2014/12/gesti%C3%B3n-del-riesgo-en-la-bolsa-invirtiendo-por-dividendos.jpg",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")])
             ]))
