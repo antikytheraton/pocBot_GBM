@@ -1,5 +1,7 @@
 # pocBot_GBM
 
+![](./example/assets/gbm_0.jpeg)
+
 # FBMQ (Facebook Messenger Platform Python Library)
 [![PyPI](https://img.shields.io/pypi/v/fbmq.svg?v=1&maxAge=3601)](https://pypi.python.org/pypi/fbmq)
 [![Build Status](https://travis-ci.org/conbus/fbmq.svg?branch=master&v=1)](https://travis-ci.org/conbus/fbmq)
