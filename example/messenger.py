@@ -127,7 +127,7 @@ def received_message(event):
               metadata="DEVELOPER_DEFINED_METADATA")
         
         elif quick_reply_payload == 'MERCADO_CAPITALES':
-            page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
+            page.send(sender_id, "¿Has invertido en Mercado Capitales?",
                 quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS_SI"),
                                QuickReply(title="No", payload="MERCADO_DERIVADOS")],
                 metadata='DEVELOPER_DEFINED_METADATA')
@@ -140,7 +140,7 @@ def received_message(event):
               metadata="DEVELOPER_DEFINED_METADATA")
         
         elif quick_reply_payload == 'MERCADO_DERIVADOS':
-            page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
+            page.send(sender_id, "¿Has invertido en Mercado Derivados?",
                 quick_replies=[QuickReply(title="Si", payload="MERCADO_DINERO_SI"),
                                QuickReply(title="No", payload="PERFIL_MODERADO")],
                 metadata='DEVELOPER_DEFINED_METADATA')
