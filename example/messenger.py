@@ -159,7 +159,7 @@ def received_message(event):
             print("segundo mensaje")
             page.send(sender_id, "Te mostraré una gráfica con la distribución recomendada para tu portafolio")
             print("tercer mensaje")
-            page.send(sender_id, Attachment.Image(CONFIG['SERVER_URL'] + "/assets/rift.png"))
+            page.send(sender_id, Attachment.Image("http://res.cloudinary.com/antikytheraton/image/upload/v1498087945/resultado_f63h2i.png"))
             print("mensaje imagen")
             page.send(sender_id, "¿Qué opinas, estás de acuerdo con este resultado o deseas realizar el cuestionario nuevamente?",
               quick_replies=[QuickReply(title="Estoy de acuerdo", payload="REPRESENTANTE"),
