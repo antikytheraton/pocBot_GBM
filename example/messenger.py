@@ -107,7 +107,11 @@ def received_postback(event):
                         quick_replies=[{'title': 'Hola quiero conocer mi perfil', 'payload': 'CONOCER_PERFIL'} ],
                         metadata="DEVELOPER_DEFINED_METADATA")
 
-    # elif payload == 'CONOCER_PERFIL':
+    elif payload == 'CONOCER_PERFIL':
+        text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+        page.send(sender_id, text)
+        text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+        page.send(sender_id, text)
         
     else:    
         page.send(sender_id, "Postback called")
@@ -160,11 +164,8 @@ def send_message(recipient_id, text):
 
 # *******************************************************************************************************************
 
-def conocer_perfil(recipient):
-    text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-    page.send(sender_id, text)
-    text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-    page.send(sender_id, text)
+# def conocer_perfil(recipient):
+    
 
 
 
