@@ -61,11 +61,17 @@ def received_message(event):
     else:
         USER_SEQ[seq_id] = seq
 
-    # if quick_reply:
-    #     quick_reply_payload = quick_reply.get('payload')
-    #     print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
+    if quick_reply:
+        quick_reply_payload = quick_reply.get('payload')
+        print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
-    #     page.send(sender_id, "Quick reply tapped")
+        if quick_reply_payload == 'CONOCER_PERFIL':
+        text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+        page.send(sender_id, text1)
+        text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+        page.send(sender_id, text2)
+
+        # page.send(sender_id, "Quick reply tapped")
 
     if message_text:
         send_message(sender_id, message_text)
@@ -107,11 +113,7 @@ def received_postback(event):
                         quick_replies=[{'title': 'Hola quiero conocer mi perfil', 'payload': 'CONOCER_PERFIL'} ],
                         metadata="DEVELOPER_DEFINED_METADATA")
 
-    elif payload == 'CONOCER_PERFIL':
-        text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-        page.send(sender_id, text1)
-        text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-        page.send(sender_id, text2)
+    
         
     else:    
         page.send(sender_id, "Postback called")
