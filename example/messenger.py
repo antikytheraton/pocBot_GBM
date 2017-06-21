@@ -70,11 +70,11 @@ def received_message(event):
             page.send(sender_id, text1)
             text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
             page.send(sender_id, text2)
-            page.send(recipient, Template.Generic([
+            page.send(sender_id, Template.Generic([
             Template.GenericElement("Mantener el valor de la inversión.",
                                     subtitle="Minimizar el riesgo de la misma.",
                                     # item_url="https://www.oculus.com/en-us/rift/",
-                                    image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
                                     buttons=[
                                         {'type': 'postback', 'title': 'seleccionar',
                                          'value': 'META_1'}
@@ -82,7 +82,7 @@ def received_message(event):
             Template.GenericElement("Acrecentar el valor de mi inversión.",
                                     subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
                                     # item_url="https://www.oculus.com/en-us/touch/",
-                                    image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
                                     buttons=[
                                         {'type': 'postback', 'title': 'seleccionar',
                                          'value': 'META_2'}
@@ -90,7 +90,7 @@ def received_message(event):
             Template.GenericElement("Crecer sustancialmente mi inversión.",
                                     subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
                                     # item_url="https://www.oculus.com/en-us/touch/",
-                                    image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                     buttons=[
                                         {'type': 'postback', 'title': 'seleccionar',
                                          'value': 'META_3'}
