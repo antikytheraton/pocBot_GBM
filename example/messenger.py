@@ -67,8 +67,8 @@ def received_message(event):
         print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
         if quick_reply_payload == 'CONOCER_PERFIL':
-            page.send(sender_id, 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta')
-            page.send(sender_id, 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?')
+            page.send(sender_id, 'Claro, solo necesito que me ayudes a responder algunas preguntas')
+            page.send(sender_id, 'Hablando sobre tu interés por invertir. ¿Cuál es tu principal meta?')
             page.send(sender_id, Template.Generic([
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de mi inversión.",
