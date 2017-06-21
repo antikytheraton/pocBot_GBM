@@ -73,21 +73,21 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_1.jpg",
+                                        image_url="http://destinonegocio.com/wp-content/uploads/2015/07/ico-destinonegocio-gestion-de-riesgos-istock-getty-images.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
                                         subtitle="Acrecentar el valor de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_2.jpg",
+                                        image_url="http://www.agro100.com.br/images/artigos/noticias/btv-33-pag-6-1.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="Quiero beneficios a corto plazo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url="https://github.com/antikytheraton/pocBot_GBM/blob/master/example/assets/meta_3.jpg",
+                                        image_url="http://www.encontresuafranquia.com.br/wp-content/uploads/2015/07/previs%C3%A3o-de-demanda.jpg",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ])
