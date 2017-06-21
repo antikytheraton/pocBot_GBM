@@ -141,9 +141,23 @@ def received_message(event):
         
         elif quick_reply_payload == 'MERCADO_DERIVADOS':
             page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
-                quick_replies=[QuickReply(title="Si", payload="lol"),
-                               QuickReply(title="No", payload="lol")],
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_DINERO_SI"),
+                               QuickReply(title="No", payload="PERFIL_MODERADO")],
                 metadata='DEVELOPER_DEFINED_METADATA')
+
+        elif quick_reply_payload == 'MERCADO_DINERO_SI':
+            page.send(sender_id, "¿A qué plazo?",
+              quick_replies=[QuickReply(title="De 1 - 3 años", payload="PERFIL_MODERADO"),
+                             QuickReply(title="De 3 - 7 años", payload="PERFIL_MODERADO"),
+                             QuickReply(title="De 7 o más años", payload="PERFIL_MODERADO")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+
+        elif quick_reply_payload == 'PERFIL_MODERADO':
+            page.send(sender_id, "Excelente, de acuerdo a tus respuestas tu perfil es Moderado")
+            page.send(sender_id, "Esto quiere decir que el objetivo principal es mantener una estrategia de inversión con un nivel de riesgo balanceado")
+            page.send(sender_id, "Te mostraré una gráfica con la distribución recomendada para tu portafolio")
+            page.send(recipient, Attachment.Image(CONFIG['SERVER_URL'] + "/assets/rift.png"))
+            page.send(sender_id, "¿Qué opinas, estás de acuerdo con este resultado o deseas realizar el cuestionario nuevamente?")
 
         
         else:
