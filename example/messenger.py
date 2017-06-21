@@ -75,24 +75,21 @@ def received_message(event):
                                         # item_url="https://www.oculus.com/en-us/rift/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
                                         buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_1'}
+                                            Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
                                         subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
                                         buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_2'}
+                                            Template.ButtonPostBack("seleccionar", "META_2")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                         buttons=[
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_3'}
+                                            Template.ButtonPostBack("seleccionar", "META_3")
                                         ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
