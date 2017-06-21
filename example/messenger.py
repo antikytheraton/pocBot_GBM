@@ -93,33 +93,53 @@ def received_message(event):
                                         ])
                 ]))
             # print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
+        
         elif quick_reply_payload == 'INVERSION_RENTA':
             page.send(sender_id, "¿Has invertido en sociedades de inversión de renta variable?",
-              quick_replies=[QuickReply(title="Si", payload="PLAZO"),
-                             QuickReply(title="No", payload="PLAZO")],
+              quick_replies=[QuickReply(title="Si", payload="PLAZO_SI"),
+                             QuickReply(title="No", payload="MERCADO_DINERO")],
               metadata="DEVELOPER_DEFINED_METADATA")
-        elif quick_reply_payload == 'PLAZO':
+        
+        elif quick_reply_payload == 'PLAZO_SI':
             page.send(sender_id, "¿A qué plazo?",
               quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_DINERO"),
                              QuickReply(title="De 3 - 7 años", payload="MERCADO_DINERO"),
                              QuickReply(title="De 7 o más años", payload="MERCADO_DINERO")],
               metadata="DEVELOPER_DEFINED_METADATA")
+        
         elif quick_reply_payload == 'MERCADO_DINERO':
             page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
-                quick_replies=[QuickReply(title="Si", payload="MERCADO_CAPITALES"),
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_CAPITALES_SI"),
                                QuickReply(title="No", payload="MERCADO_CAPITALES")],
                 metadata='DEVELOPER_DEFINED_METADATA')
+
+        elif quick_reply_payload == 'MERCADO_CAPITALES_SI':
+            page.send(sender_id, "¿A qué plazo?",
+              quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_CAPITALES"),
+                             QuickReply(title="De 3 - 7 años", payload="MERCADO_CAPITALES"),
+                             QuickReply(title="De 7 o más años", payload="MERCADO_CAPITALES")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+        
         elif quick_reply_payload == 'MERCADO_CAPITALES':
             page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
-                quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS"),
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS_SI"),
                                QuickReply(title="No", payload="MERCADO_DERIVADOS")],
                 metadata='DEVELOPER_DEFINED_METADATA')
+            
+        elif quick_reply_payload == 'MERCADO_CAPITALES_SI':
+            page.send(sender_id, "¿A qué plazo?",
+              quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_DERIVADOS"),
+                             QuickReply(title="De 3 - 7 años", payload="MERCADO_DERIVADOS"),
+                             QuickReply(title="De 7 o más años", payload="MERCADO_DERIVADOS")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+        
         elif quick_reply_payload == 'MERCADO_DERIVADOS':
             page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
                 quick_replies=[QuickReply(title="Si", payload="lol"),
                                QuickReply(title="No", payload="lol")],
                 metadata='DEVELOPER_DEFINED_METADATA')
 
+        
         else:
             page.send(sender_id, "Quick reply tapped")
 
