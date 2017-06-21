@@ -95,7 +95,16 @@ def received_message(event):
                                              'value': 'META_3'},
                                             {'type': 'postback', 'title': 'seleccionar',
                                              'value': 'META_2'}
-                                        ])
+                                        ]),
+                Template.GenericElement("rift",
+                                subtitle="Next-generation virtual reality",
+                                item_url="https://www.oculus.com/en-us/rift/",
+                                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                buttons=[
+                                    Template.ButtonWeb("Open Web URL", "https://www.oculus.com/en-us/rift/"),
+                                    Template.ButtonPostBack("tigger Postback", "DEVELOPED_DEFINED_PAYLOAD"),
+                                    Template.ButtonPhoneNumber("Call Phone Number", "+16505551234")
+                                ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
         else:
