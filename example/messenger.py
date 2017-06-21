@@ -73,21 +73,21 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
+                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
                                         subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_2.jpg",
+                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr de riesgos.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
-                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
+                                        image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ])
@@ -159,6 +159,10 @@ def received_postback(event):
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")])
             ]))
+
+    elif payload == 'RIESGO':
+        page.send(sender_id, "Para asegurar tu rendimiento, tu inversión se divide en diferentes instrumentos.")
+        page.send(sender_id, "Al conjunto de estos instrumentos se le llama portafolio")
 
 
     else:
