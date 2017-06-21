@@ -73,7 +73,7 @@ def received_message(event):
                 Template.GenericElement("Mantener el valor de la inversión.",
                                         subtitle="Minimizar el riesgo de la misma.",
                                         # item_url="https://www.oculus.com/en-us/rift/",
-                                        image_url="https://gbm-but.herokuapp.com/assets/meta_1.jpg",
+                                        image_url=CONFIG['SERVER_URL'] + "/assets/meta_1.jpg",
                                         buttons=[
                                             {'type': 'postback', 'title': 'seleccionar',
                                              'value': 'META_1'}
@@ -92,19 +92,8 @@ def received_message(event):
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                         buttons=[
                                             {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_3'},
-                                            {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_2'}
-                                        ]),
-                Template.GenericElement("rift",
-                                subtitle="Next-generation virtual reality",
-                                item_url="https://www.oculus.com/en-us/rift/",
-                                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
-                                buttons=[
-                                    Template.ButtonWeb("Open Web URL", "https://www.oculus.com/en-us/rift/"),
-                                    Template.ButtonPostBack("tigger Postback", "DEVELOPED_DEFINED_PAYLOAD"),
-                                    Template.ButtonPhoneNumber("Call Phone Number", "+16505551234")
-                                ])
+                                             'value': 'META_3'}
+                                        ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
         else:
