@@ -70,7 +70,32 @@ def received_message(event):
             page.send(sender_id, text1)
             text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
             page.send(sender_id, text2)
-            meta_principal_generic(sender_id)
+            page.send(recipient, Template.Generic([
+            Template.GenericElement("Mantener el valor de la inversión.",
+                                    subtitle="Minimizar el riesgo de la misma.",
+                                    # item_url="https://www.oculus.com/en-us/rift/",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                                    buttons=[
+                                        {'type': 'postback', 'title': 'seleccionar',
+                                         'value': 'META_1'}
+                                    ]),
+            Template.GenericElement("Acrecentar el valor de mi inversión.",
+                                    subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
+                                    # item_url="https://www.oculus.com/en-us/touch/",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
+                                    buttons=[
+                                        {'type': 'postback', 'title': 'seleccionar',
+                                         'value': 'META_2'}
+                                    ]),
+            Template.GenericElement("Crecer sustancialmente mi inversión.",
+                                    subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
+                                    # item_url="https://www.oculus.com/en-us/touch/",
+                                    image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
+                                    buttons=[
+                                        {'type': 'postback', 'title': 'seleccionar',
+                                         'value': 'META_3'}
+                                    ])
+            ]))
 
         # page.send(sender_id, "Quick reply tapped")
 
@@ -183,32 +208,7 @@ def send_message(recipient_id, text):
     
 
 def meta_principal_generic(recipient):
-    page.send(recipient, Template.Generic([
-        Template.GenericElement("Mantener el valor de la inversión.",
-                                subtitle="Minimizar el riesgo de la misma.",
-                                # item_url="https://www.oculus.com/en-us/rift/",
-                                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
-                                buttons=[
-                                    {'type': 'postback', 'title': 'seleccionar',
-                                     'value': 'META_1'}
-                                ]),
-        Template.GenericElement("Acrecentar el valor de mi inversión.",
-                                subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo, exponiendo mi  inversión a un nivel moderado de riesgo.",
-                                # item_url="https://www.oculus.com/en-us/touch/",
-                                image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
-                                buttons=[
-                                    {'type': 'postback', 'title': 'seleccionar',
-                                     'value': 'META_2'}
-                                ]),
-        Template.GenericElement("Crecer sustancialmente mi inversión.",
-                                subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr un nivel de riesgo  considerable para lograr lo anterior.",
-                                # item_url="https://www.oculus.com/en-us/touch/",
-                                image_url=CONFIG['SERVER_URL'] + "/assets/touch.png",
-                                buttons=[
-                                    {'type': 'postback', 'title': 'seleccionar',
-                                     'value': 'META_3'}
-                                ])
-    ]))
+
 #********************************************************************************************************************
 
 
