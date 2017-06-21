@@ -78,14 +78,14 @@ def received_message(event):
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
-                                        subtitle="Acrecentar el valor de mi inversión gradualmente en el tiempo.",
+                                        subtitle="Acrecentar el valor de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
-                                        subtitle="No requiero obtener beneficio a corto plazo. Estoy dispuesto a correr de riesgos.",
+                                        subtitle="Requiero obtener beneficio a corto plazo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
@@ -144,17 +144,17 @@ def received_postback(event):
         # page.send(sender_id, "Inversiones con mayor riesgo generalmente ofrecen más crecimiento a largo plazo que aquellas con menos riesgo, pero pueden producir mayor volatilidad.")
         page.send(sender_id, Template.Generic([
             Template.GenericElement("Con el menor posible",
-                subtitle="Enfocarse en estabilidad, aunque signifique que las ganancias sean pequeñas.",
+                subtitle="Enfocarse en estabilidad.",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
             Template.GenericElement("Moderado",
-                subtitle="Estoy dispuesto a asumir riesgo medio buscando obtener mayor potencial de crecimiento a través del tiempo.",
+                subtitle="Estoy dispuesto a asumir un riesgo medio.",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
             Template.GenericElement("Un porcentage considerable",
-                subtitle="Deseo asumir un riesgo alto en busca de   obtener mayores beneficios.",
+                subtitle="Deseo asumir un riesgo alto.",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")])
