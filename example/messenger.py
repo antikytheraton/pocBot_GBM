@@ -93,7 +93,13 @@ def received_message(event):
                                         ])
                 ]))
             # print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
-        
+        elif quick_reply_payload == 'INVERSION_RENTA_SI':
+            page.send(sender_id, "¿A qué plazo?",
+              quick_replies=[QuickReply(title="De 1 - 3 años", payload="INVERSION_RENTA"),
+                             QuickReply(title="De 3 - 7 años", payload="INVERSION_RENTA"),
+                             QuickReply(title="De 7 o más años", payload="INVERSION_RENTA")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+
         elif quick_reply_payload == 'INVERSION_RENTA':
             page.send(sender_id, "¿Has invertido en sociedades de inversión de renta variable?",
               quick_replies=[QuickReply(title="Si", payload="PLAZO_SI"),
@@ -125,7 +131,7 @@ def received_message(event):
                 quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS_SI"),
                                QuickReply(title="No", payload="MERCADO_DERIVADOS")],
                 metadata='DEVELOPER_DEFINED_METADATA')
-            
+
         elif quick_reply_payload == 'MERCADO_CAPITALES_SI':
             page.send(sender_id, "¿A qué plazo?",
               quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_DERIVADOS"),
@@ -279,7 +285,7 @@ def received_postback(event):
     elif payload == 'INVERSION_DEUDA':
         page.send(sender_id, "Queremos saber si has invertido antes y en qué instrumentos")
         page.send(sender_id, "¿Has invertido en sociedades de inversión de deuda?",
-              quick_replies=[QuickReply(title="Si", payload="INVERSION_RENTA"),
+              quick_replies=[QuickReply(title="Si", payload="INVERSION_RENTA_SI"),
                              QuickReply(title="No", payload="INVERSION_RENTA")],
               metadata="DEVELOPER_DEFINED_METADATA")
 
