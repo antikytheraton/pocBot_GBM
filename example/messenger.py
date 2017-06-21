@@ -294,17 +294,17 @@ def received_postback(event):
         page.send(sender_id, Template.Generic([
             Template.GenericElement("Corto plazo",
                 subtitle="0 a 2 años",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://conceptodefinicion.de/wp-content/uploads/2016/07/Inversi%C3%B3n_a_Corto_Plazo1.jpg",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")]),
             Template.GenericElement("Mediano plazo",
                 subtitle="Más de 2 años, pero menos de 5 años",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="https://st3.idealista.com/news/archivos/styles/news_detail/public/2012-02/inversion-corto-largo-plazo.jpg?sv=LI03W56F&itok=W8pmtPYq",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")]),
             Template.GenericElement("Largo plazo",
                 subtitle="5 años o más",
-                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://ideasparanegocios.net/wp-content/uploads/2015/08/Inversi%C3%B3n-a-largo-plazo.jpg",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")])
             ]))
