@@ -92,7 +92,9 @@ def received_message(event):
                                         image_url=CONFIG['SERVER_URL'] + "/assets/meta_3.jpg",
                                         buttons=[
                                             {'type': 'postback', 'title': 'seleccionar',
-                                             'value': 'META_3'}
+                                             'value': 'META_3'},
+                                            {'type': 'postback', 'title': 'seleccionar',
+                                             'value': 'META_2'}
                                         ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
