@@ -105,7 +105,20 @@ def received_message(event):
                              QuickReply(title="De 7 o más años", payload="MERCADO_DINERO")],
               metadata="DEVELOPER_DEFINED_METADATA")
         elif quick_reply_payload == 'MERCADO_DINERO':
-            page.send(sender_id, "¿Has invertido en Mercado de Dinero?")
+            page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_CAPITALES"),
+                               QuickReply(title="No", payload="MERCADO_CAPITALES")],
+                metadata='DEVELOPER_DEFINED_METADATA')
+        elif quick_reply_payload == 'MERCADO_CAPITALES':
+            page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS"),
+                               QuickReply(title="No", payload="MERCADO_DERIVADOS")],
+                metadata='DEVELOPER_DEFINED_METADATA')
+        elif quick_reply_payload == 'MERCADO_DERIVADOS':
+            page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
+                quick_replies=[QuickReply(title="Si", payload="lol"),
+                               QuickReply(title="No", payload="lol")],
+                metadata='DEVELOPER_DEFINED_METADATA')
 
         else:
             page.send(sender_id, "Quick reply tapped")
