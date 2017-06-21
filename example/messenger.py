@@ -66,10 +66,10 @@ def received_message(event):
         print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
         if quick_reply_payload == 'CONOCER_PERFIL':
-        text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-        page.send(sender_id, text1)
-        text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-        page.send(sender_id, text2)
+            text1 = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+            page.send(sender_id, text1)
+            text2 = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+            page.send(sender_id, text2)
 
         # page.send(sender_id, "Quick reply tapped")
 
