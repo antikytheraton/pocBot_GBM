@@ -85,7 +85,7 @@ def received_message(event):
                                             Template.ButtonPostBack("seleccionar", "META_1")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
-                                        subtitle="Requiero obtener beneficio a corto plazo.",
+                                        subtitle="Quiero beneficios a corto plazo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
