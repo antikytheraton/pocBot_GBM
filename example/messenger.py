@@ -102,8 +102,16 @@ def received_postback(event):
     # page.send(sender_id, "Postback called")
 
     if payload == 'INIT_USERBOT':
-        page.send(sender_id, "Hola" + {{user_first_name}} + " . En que te puedo ayudar?")
+        text = "Hola. En que te puedo ayudar?"
+        page.send(recipient, text,
+                        quick_replies=[{'title': 'Hola quiero conocer mi perfil', 'payload': 'CONOCER_PERFIL'} ],
+                        metadata="DEVELOPER_DEFINED_METADATA")
 
+    elif payload == 'CONOCER_PERFIL':
+        text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+        page.send(sender_id, text)
+        text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+        page.send(sender_id, text)
 
 
 
