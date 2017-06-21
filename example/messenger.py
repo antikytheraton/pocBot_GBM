@@ -75,21 +75,21 @@ def received_message(event):
                                         # item_url="https://www.oculus.com/en-us/rift/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
-                                            Template.ButtonPostBack("seleccionar", "META_1")
+                                            Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Acrecentar el valor de mi inversión.",
                                         subtitle="Acrecentar el valor de mi inversión.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
-                                            Template.ButtonPostBack("seleccionar", "META_1")
+                                            Template.ButtonPostBack("seleccionar", "META")
                                         ]),
                 Template.GenericElement("Crecer sustancialmente mi inversión.",
                                         subtitle="Quiero beneficios a corto plazo.",
                                         # item_url="https://www.oculus.com/en-us/touch/",
                                         image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                                         buttons=[
-                                            Template.ButtonPostBack("seleccionar", "META_1")
+                                            Template.ButtonPostBack("seleccionar", "META")
                                         ])
                 ]))
             print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
@@ -137,7 +137,7 @@ def received_postback(event):
                         quick_replies=[{'title': 'Mi perfil', 'payload': 'CONOCER_PERFIL'} ],
                         metadata="DEVELOPER_DEFINED_METADATA")
 
-    elif payload == 'META_1':
+    elif payload == 'META':
         page.send(sender_id, "Hablemos de riesgo")
         page.send(sender_id, "¿Con que nivel de riesgo crees que te sentirías más cómodo?")
         # page.send(sender_id, "Antes de responder recuerda que el grado en el que el valor de la inversión aumenta o disminuye depende del nivel de riesgo que asuma.")
@@ -194,19 +194,40 @@ def received_postback(event):
             Template.GenericElement("Portafolio A",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio B",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio C",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
             Template.GenericElement("Portafolio D",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")])
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")])
+            ]))
+
+    elif payload == 'BENEFICIOS':
+        page.send(sender_id, "Excelente, ahora hablemos de los beneficios")
+        page.send(sender_id, "¿En qué tiempo consideras que necesitarás toda o una parte de tu inversión?")
+        page.send(sender_id, Template.Generic([
+            Template.GenericElement("Corto plazo",
+                subtitle="0 a 2 años",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
+            Template.GenericElement("Mediano plazo",
+                subtitle="Más de 2 años, pero menos de 5 años",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
+            Template.GenericElement("Largo plazo",
+                subtitle="5 años o más",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")])
             ]))
 
     else:
