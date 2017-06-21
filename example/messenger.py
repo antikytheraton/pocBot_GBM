@@ -61,11 +61,11 @@ def received_message(event):
     else:
         USER_SEQ[seq_id] = seq
 
-    if quick_reply:
-        quick_reply_payload = quick_reply.get('payload')
-        print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
+    # if quick_reply:
+    #     quick_reply_payload = quick_reply.get('payload')
+    #     print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
-        page.send(sender_id, "Quick reply tapped")
+    #     page.send(sender_id, "Quick reply tapped")
 
     if message_text:
         send_message(sender_id, message_text)
@@ -99,7 +99,7 @@ def received_postback(event):
     print("Received postback for user %s and page %s with payload '%s' at %s"
           % (sender_id, recipient_id, payload, time_of_postback))
 
-    # page.send(sender_id, "Postback called")
+    
 
     if payload == 'INIT_USERBOT':
         text = "Hola. En que te puedo ayudar?"
@@ -107,11 +107,10 @@ def received_postback(event):
                         quick_replies=[{'title': 'Hola quiero conocer mi perfil', 'payload': 'CONOCER_PERFIL'} ],
                         metadata="DEVELOPER_DEFINED_METADATA")
 
-    elif payload == 'CONOCER_PERFIL':
-        text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
-        page.send(sender_id, text)
-        text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
-        page.send(sender_id, text)
+    # elif payload == 'CONOCER_PERFIL':
+        
+    else:    
+        page.send(sender_id, "Postback called")
 
 
 
@@ -150,13 +149,26 @@ def send_message(recipient_id, text):
         "read receipt": send_read_receipt,
         "typing on": send_typing_on,
         "typing off": send_typing_off,
-        "account linking": send_account_linking
+        "account linking": send_account_linking,
+        "CONOCER_PERFIL": conocer_perfil
     }
 
     if text in special_keywords:
         special_keywords[text](recipient_id)
     else:
         page.send(recipient_id, text, callback=send_text_callback, notification_type=NotificationType.REGULAR)
+
+# *******************************************************************************************************************
+
+def conocer_perfil(recipient):
+    text = 'Claro, solo necesito que me ayudes a responder algunas preguntas, las preguntas son de opción múltiple y sólo puedes seleccionar una respuesta'
+    page.send(sender_id, text)
+    text = 'Hablando sobre tu interés por invertir ¿Cuál es tu principal meta?'
+    page.send(sender_id, text)
+
+
+
+
 
 
 def send_text_callback(payload, response):
