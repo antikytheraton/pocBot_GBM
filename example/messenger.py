@@ -115,11 +115,11 @@ def received_message(event):
         
         elif quick_reply_payload == 'MERCADO_DINERO':
             page.send(sender_id, "¿Has invertido en Mercado de Dinero?",
-                quick_replies=[QuickReply(title="Si", payload="MERCADO_CAPITALES_SI"),
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_DINERO_SI"),
                                QuickReply(title="No", payload="MERCADO_CAPITALES")],
                 metadata='DEVELOPER_DEFINED_METADATA')
 
-        elif quick_reply_payload == 'MERCADO_CAPITALES_SI':
+        elif quick_reply_payload == 'MERCADO_DINERO_SI':
             page.send(sender_id, "¿A qué plazo?",
               quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_CAPITALES"),
                              QuickReply(title="De 3 - 7 años", payload="MERCADO_CAPITALES"),
@@ -128,7 +128,7 @@ def received_message(event):
         
         elif quick_reply_payload == 'MERCADO_CAPITALES':
             page.send(sender_id, "¿Has invertido en Mercado Capitales?",
-                quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS_SI"),
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_CAPITALES_SI"),
                                QuickReply(title="No", payload="MERCADO_DERIVADOS")],
                 metadata='DEVELOPER_DEFINED_METADATA')
 
@@ -141,11 +141,11 @@ def received_message(event):
         
         elif quick_reply_payload == 'MERCADO_DERIVADOS':
             page.send(sender_id, "¿Has invertido en Mercado Derivados?",
-                quick_replies=[QuickReply(title="Si", payload="MERCADO_DINERO_SI"),
+                quick_replies=[QuickReply(title="Si", payload="MERCADO_DERIVADOS_SI"),
                                QuickReply(title="No", payload="PERFIL_MODERADO")],
                 metadata='DEVELOPER_DEFINED_METADATA')
 
-        elif quick_reply_payload == 'MERCADO_DINERO_SI':
+        elif quick_reply_payload == 'MERCADO_DERIVADOS_SI':
             page.send(sender_id, "¿A qué plazo?",
               quick_replies=[QuickReply(title="De 1 - 3 años", payload="PERFIL_MODERADO"),
                              QuickReply(title="De 3 - 7 años", payload="PERFIL_MODERADO"),
