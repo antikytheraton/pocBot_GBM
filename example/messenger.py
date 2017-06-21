@@ -93,11 +93,18 @@ def received_postback(event):
     time_of_postback = event.timestamp
 
     payload = event.postback_payload
-
+    
+    print('-------------------------postback_payload----------------------------------------')
+    print(payload)
     print("Received postback for user %s and page %s with payload '%s' at %s"
           % (sender_id, recipient_id, payload, time_of_postback))
 
-    page.send(sender_id, "Postback called")
+    # page.send(sender_id, "Postback called")
+
+    if payload == 'INIT_USERBOT':
+        page.send(sender_id, "Hola" + {{user_first_name}} + " . En que te puedo ayudar?")
+
+
 
 
 @page.handle_read
