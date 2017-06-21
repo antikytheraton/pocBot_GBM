@@ -207,7 +207,7 @@ def send_message(recipient_id, text):
 # def conocer_perfil(recipient):
     
 
-def meta_principal_generic(recipient):
+# def meta_principal_generic(recipient):
 
 #********************************************************************************************************************
 
