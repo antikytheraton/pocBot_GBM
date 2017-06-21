@@ -92,7 +92,21 @@ def received_message(event):
                                             Template.ButtonPostBack("seleccionar", "META")
                                         ])
                 ]))
-            print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
+            # print(CONFIG['SERVER_URL'] + "/assets/meta_2.jpg")
+        elif quick_reply_payload == 'INVERSION_RENTA':
+            page.send(sender_id, "¿Has invertido en sociedades de inversión de renta variable?",
+              quick_replies=[QuickReply(title="Si", payload="PLAZO"),
+                             QuickReply(title="No", payload="PLAZO")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+        elif quick_reply_payload == 'PLAZO':
+            page.send(sender_id, "¿A qué plazo?",
+              quick_replies=[QuickReply(title="De 1 - 3 años", payload="MERCADO_DINERO"),
+                             QuickReply(title="De 3 - 7 años", payload="MERCADO_DINERO"),
+                             QuickReply(title="De 7 o más años", payload="MERCADO_DINERO")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+        elif quick_reply_payload == 'MERCADO_DINERO':
+            page.send(sender_id, "¿Has invertido en Mercado de Dinero?")
+
         else:
             page.send(sender_id, "Quick reply tapped")
 
@@ -217,18 +231,24 @@ def received_postback(event):
                 subtitle="0 a 2 años",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
+                    Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")]),
             Template.GenericElement("Mediano plazo",
                 subtitle="Más de 2 años, pero menos de 5 años",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")]),
+                    Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")]),
             Template.GenericElement("Largo plazo",
                 subtitle="5 años o más",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
-                    Template.ButtonPostBack("seleccionar", "BENEFICIOS")])
+                    Template.ButtonPostBack("seleccionar", "INVERSION_DEUDA")])
             ]))
+    elif payload == 'INVERSION_DEUDA':
+        page.send(sender_id, "Queremos saber si has invertido antes y en qué instrumentos")
+        page.send(recipient, "¿Has invertido en sociedades de inversión de deuda?",
+              quick_replies=[QuickReply(title="Si", payload="INVERSION_RENTA"),
+                             QuickReply(title="No", payload="INVERSION_RENTA")],
+              metadata="DEVELOPER_DEFINED_METADATA")
 
     else:
         page.send(sender_id, "Postback called")
