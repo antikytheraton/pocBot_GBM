@@ -245,7 +245,7 @@ def received_postback(event):
             ]))
     elif payload == 'INVERSION_DEUDA':
         page.send(sender_id, "Queremos saber si has invertido antes y en qué instrumentos")
-        page.send(recipient, "¿Has invertido en sociedades de inversión de deuda?",
+        page.send(sender_id, "¿Has invertido en sociedades de inversión de deuda?",
               quick_replies=[QuickReply(title="Si", payload="INVERSION_RENTA"),
                              QuickReply(title="No", payload="INVERSION_RENTA")],
               metadata="DEVELOPER_DEFINED_METADATA")
