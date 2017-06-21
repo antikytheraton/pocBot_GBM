@@ -187,6 +187,27 @@ def received_postback(event):
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")])
             ]))
 
+    elif payload == 'PORTAFOLIO':
+        page.send(sender_id, "Te mostrare unas gráficas con diferentes portafolios de inversión y sus rendimientos.")
+        page.send(sender_id, "Debes elegir la opción con la que te sientas más cómodo, tómate tu tiempo")
+        page.send(sender_id, Template.Generic([
+            Template.GenericElement("Portafolio A",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+            Template.GenericElement("Portafolio B",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+            Template.GenericElement("Portafolio C",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
+            Template.GenericElement("Portafolio D",
+                image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                buttons=[
+                    Template.ButtonPostBack("seleccionar", "PORTAFOLIO")])
+            ]))
 
     else:
         page.send(sender_id, "Postback called")
