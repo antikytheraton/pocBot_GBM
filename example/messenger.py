@@ -149,7 +149,7 @@ def received_postback(event):
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
             Template.GenericElement("Moderado",
-                subtitle="Estoy dispuesto a asumir un riesgo medio.",
+                subtitle="Estoy dispuesto a asumir un riesgos.",
                 image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "RIESGO")]),
