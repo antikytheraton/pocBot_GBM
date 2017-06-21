@@ -154,10 +154,22 @@ def received_message(event):
 
         elif quick_reply_payload == 'PERFIL_MODERADO':
             page.send(sender_id, "Excelente, de acuerdo a tus respuestas tu perfil es Moderado")
+            print("primer mensaje")
             page.send(sender_id, "Esto quiere decir que el objetivo principal es mantener una estrategia de inversión con un nivel de riesgo balanceado")
+            print("segundo mensaje")
             page.send(sender_id, "Te mostraré una gráfica con la distribución recomendada para tu portafolio")
-            page.send(recipient, Attachment.Image(CONFIG['SERVER_URL'] + "/assets/rift.png"))
-            page.send(sender_id, "¿Qué opinas, estás de acuerdo con este resultado o deseas realizar el cuestionario nuevamente?")
+            print("tercer mensaje")
+            page.send(sender_id, Attachment.Image(CONFIG['SERVER_URL'] + "/assets/rift.png"))
+            print("mensaje imagen")
+            page.send(sender_id, "¿Qué opinas, estás de acuerdo con este resultado o deseas realizar el cuestionario nuevamente?",
+              quick_replies=[QuickReply(title="Estoy de acuerdo", payload="REPRESENTANTE"),
+                             QuickReply(title="Reiniciar cuastionario", payload="REPRESENTANTE")],
+              metadata="DEVELOPER_DEFINED_METADATA")
+            print('mensaje quick replies')
+
+        elif quick_reply_payload == 'REPRESENTANTE':
+            page.send(sender_id, "De acuerdo, recuerda concluir tu trámite enviando todos tus documentos por correo o por medio de nuestra página https://www.gbmfondos.com.mx")
+
 
         
         else:
