@@ -7,6 +7,7 @@ import json
 from example.config import CONFIG
 from fbmq import Attachment, Template, QuickReply, NotificationType
 from example.fbpage import page
+import time
 
 USER_SEQ = {}
 
@@ -67,6 +68,11 @@ def received_message(event):
         print("quick reply for message %s with payload %s" % (message_id, quick_reply_payload))
 
         if quick_reply_payload == 'CONOCER_PERFIL':
+
+            page.typing_on(sender_id)
+            time.sleep(2)
+            page.typing_off(sender_id)
+
             page.send(sender_id, 'Claro, solo necesito que me ayudes a responder algunas preguntas')
             page.send(sender_id, 'Hablando sobre tu interés por invertir. ¿Cuál es tu principal meta?')
             page.send(sender_id, Template.Generic([
