@@ -245,23 +245,23 @@ def received_postback(event):
         page.send(sender_id, "Seleccione uno de los cinco escenarios posibles:")
         page.send(sender_id, Template.Generic([
             Template.GenericElement("100%  en la inversión x y 0%  en la inversión Y. ",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498090109/g6_dqrdtn.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("80%  en la Inversión X y 20%  en la Inversión Y.",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498090109/g5_ijsjei.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("50%  en la Inversión X y 50%  en la Inversión Y. ",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498090109/g4_afj0ni.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("20%  en la Inversión X y 80%  en la Inversión Y ",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498090109/g2_m5loxk.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")]),
             Template.GenericElement("0%  en la Inversión X y 100%  en la Inversión Y ",
-                # image_url=CONFIG['SERVER_URL'] + "/assets/rift.png",
+                image_url="http://res.cloudinary.com/antikytheraton/image/upload/v1498090109/g1_h4zbof.png",
                 buttons=[
                     Template.ButtonPostBack("seleccionar", "PORTAFOLIO")])
             ]))
