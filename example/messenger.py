@@ -41,10 +41,10 @@ def received_echo(event):
 
 
 
-@page.get_user_profile
-def get_user_profile(event.sender_id):
-    page_id = page.page_id
-    page_name = page.page_name
+# @page.get_user_profile
+# def get_user_profile(event.sender_id):
+#     page_id = page.page_id
+#     page_name = page.page_name
 
 
 
