@@ -7,6 +7,7 @@ import json
 from example.config import CONFIG
 from fbmq import Attachment, Template, QuickReply, NotificationType
 from example.fbpage import page
+import time
 
 USER_SEQ = {}
 
@@ -157,6 +158,11 @@ def received_message(event):
             print("primer mensaje")
             page.send(sender_id, "Esto quiere decir que el objetivo principal es mantener una estrategia de inversión con un nivel de riesgo balanceado")
             print("segundo mensaje")
+
+            page.typing_on(sender_id)
+            time.sleep(2)
+            page.typing_off(sender_id)
+            
             page.send(sender_id, "Te mostraré una gráfica con la distribución recomendada para tu portafolio")
             print("tercer mensaje")
             page.send(sender_id, Attachment.Image("http://res.cloudinary.com/antikytheraton/image/upload/v1498087945/resultado_f63h2i.png"))
