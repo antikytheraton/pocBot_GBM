@@ -36,26 +36,6 @@ def received_echo(event):
     print("Received echo for message %s and app %s with metadata %s" % (message_id, app_id, metadata))
 
 
-
-
-
-
-
-# @page.get_user_profile
-# def get_user_profile(event.sender_id):
-#     page_id = page.page_id
-#     page_name = page.page_name
-
-
-
-
-
-
-
-
-
-
-
 @page.handle_message
 def received_message(event):
     sender_id = event.sender_id
@@ -233,12 +213,12 @@ def received_postback(event):
     recipient_id = event.recipient_id
     time_of_postback = event.timestamp
     user_profile = page.get_user_profile(event.sender_id)
-    print('----------------------user_profile----------------------------------------------')
+    print('----------------------------------user_profile----------------------------------------------')
     print(user_profile)
 
     payload = event.postback_payload
     
-    print('-------------------------postback_payload----------------------------------------')
+    print('-----------------------------------postback_payload-----------------------------------------')
     print(payload)
     print("Received postback for user %s and page %s with payload '%s' at %s"
           % (sender_id, recipient_id, payload, time_of_postback))
