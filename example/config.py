@@ -1,5 +1,5 @@
 CONFIG = {
-    'FACEBOOK_TOKEN': 'EAAE9pkz7ZBQQBAFnDxMvQsS0KAnASAZBlzQvartTSGgmrixJiWZBOJlfYuCa6NwQUD3hcJmqi25ZCWwcjPeZAZBMrY3vLqLO9K4wRp7lOSoizD44dxKRWDLZCjhOJgAvNKixMlbh1ZAkVyTjD7Oy8ZCYvP7P6S2mMp7FZBrceUyfprBwZDZD',
-    'VERIFY_TOKEN': 'verify_gbmbot',
-    'SERVER_URL': 'https://gbm-but.herokuapp.com'
+    'FACEBOOK_TOKEN': 'EAAPNmq1PDfMBAEcy1G7BWD6NnfjmWbB7B1fZBSerZBTswKgJ1geKNie04rbm0R7i83gv32jw03ERvsvOCSGCqj0AeRiR4M9syxob1arIHCqq8fQJ4f8zONV4iOq9IuDgjshXELf2ZCDO6n5oLqLlxmCWsYQvOwUAfJPIdD1MwZDZD',
+    'VERIFY_TOKEN': 'verify_gbmbot_difflib',
+    'SERVER_URL': 'https://chatbot-difflib.herokuapp.com/'
 }
