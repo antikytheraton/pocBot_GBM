@@ -163,7 +163,7 @@ def received_message(event):
             print("mensaje imagen")
             page.send(sender_id, "¿Qué opinas, estás de acuerdo con este resultado o deseas realizar el cuestionario nuevamente?",
               quick_replies=[QuickReply(title="Estoy de acuerdo", payload="REPRESENTANTE"),
-                             QuickReply(title="Reiniciar cuastionario", payload="REPRESENTANTE")],
+                             QuickReply(title="Reiniciar cuestionario", payload="REPRESENTANTE")],
               metadata="DEVELOPER_DEFINED_METADATA")
             print('mensaje quick replies')
 
